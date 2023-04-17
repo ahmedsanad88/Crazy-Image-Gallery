@@ -9,6 +9,11 @@
 <br />
 <br />
 
+![gallery](https://user-images.githubusercontent.com/57454543/232504708-60954294-a135-4fb5-b175-17284f53d582.gif)
+
+<br />
+<br />
+
 ## Summary📚
 
 - The project delivered a new style images gallery to show users more about you.
