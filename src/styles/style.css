@@ -1,0 +1,147 @@
+:root {
+  --cardBg: #1d1d1d;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 1s ease;
+}
+
+.container-animate {
+  transform: translateX(-8.5rem) translateY(-8.5rem);
+}
+
+.cube {
+  position: absolute;
+  width: 17rem;
+  height: 17rem;
+  background-color: var(--cardBg);
+  display: grid;
+  place-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.cube img {
+  width: 100%;
+  object-fit: cover;
+  padding-inline: 0.4rem;
+}
+
+.cube2 {
+  /* position: relative; */
+  transform-origin: right center;
+}
+
+.cube2-animate {
+  transform: perspective(1000px) rotateX(0deg) rotateY(180deg);
+}
+
+.cube3 {
+  transform-origin: right bottom;
+}
+
+.cube3-animate {
+  transform: perspective(1000px) rotateY(180deg) rotateX(-180deg);
+}
+
+.cube4 {
+  transform-origin: center bottom;
+}
+
+.cube4-animate {
+  transition-delay: 0.2s;
+  transform: perspective(1000px) rotateY(180deg) rotateX(-180deg)
+    rotateY(180deg);
+}
+
+.frontface,
+.backface {
+  content: "";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+.frontface {
+  background-color: var(--cardBg);
+}
+
+.backface {
+  background-color: var(--cardBg);
+  transform: rotateY(180deg);
+}
+
+.cube3__box__flip {
+  transform: rotateZ(180deg);
+}
+
+.cube2__box__flip {
+  transform: rotateY(180deg) rotateZ(0deg);
+}
+
+.cube4__box__flip {
+  transform: rotateY(180deg) rotateZ(180deg);
+}
+
+@media screen and (max-width: 676px) {
+  .container-animate {
+    transform: translateX(0px) translateY(0px);
+  }
+  .cube2,
+  .cube3,
+  .cube4 {
+    transform-origin: bottom center;
+  }
+
+  .cube2-animate {
+    transform: perspective(1000px) rotateX(-180deg) rotateY(0deg);
+  }
+
+  .cube3-animate {
+    transform: perspective(1000px) translateY(17rem) rotateX(-180deg)
+      rotateY(0deg);
+  }
+
+  .cube4-animate {
+    transition-delay: 0s;
+    transform: perspective(1000px) translateY(34rem) rotateY(0deg)
+      rotateX(-180deg) rotateY(0deg);
+  }
+
+  .cube3__box__flip {
+    transform: rotateY(-180deg) rotateZ(180deg);
+  }
+
+  .cube2__box__flip {
+    transform: rotateY(-180deg) rotateZ(180deg);
+  }
+}
