@@ -54,7 +54,6 @@ body {
 }
 
 .cube2 {
-  /* position: relative; */
   transform-origin: right center;
 }
 
@@ -111,6 +110,8 @@ body {
 .cube4__box__flip {
   transform: rotateY(180deg) rotateZ(180deg);
 }
+
+/* Animation on small screens */
 
 @media screen and (max-width: 676px) {
   .container-animate {
